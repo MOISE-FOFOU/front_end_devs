@@ -14,12 +14,10 @@ const TodoList = () => {
       setNewTask("");
     }
   };
-
   const handleClickDelete = (index) => {
     const filtered = tasks.filter((_, i) => i !== index);
     setTasks(filtered);
   };
-
   return (
     <>
       <div
@@ -47,8 +45,28 @@ const TodoList = () => {
             />
             <input type="button" value="ADD" onClick={handleClickAdd} />
           </div>
-          <div>
-            <ul style={{ listStyleType: "none" }}>
+         
+        </div>
+        <div style={{ display: "flex",marginTop:"20px", marginBottom:"20px",flexDirection: "row" }}>
+          <Coloration value="blue" setCurrentColor={setCurrentColor}/>
+          <Coloration value="black" setCurrentColor={setCurrentColor}/>
+          <Coloration value="red" setCurrentColor={setCurrentColor}/>
+          </div>
+         </div>
+      <div>
+            <ul style={{ listStyleType: "none",
+            color:"white",
+            display: "flex",
+            marginTop:"40px",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "2px solid white",
+            width: "666px",
+            margin: "auto",
+            backgroundColor: currentColor,
+            position: "relative",
+            top: "100px",
+         }}>
               {tasks.map((current, index) => (
                 <li
                   key={index}
@@ -70,13 +88,6 @@ const TodoList = () => {
               ))}
             </ul>
           </div>
-        </div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <Coloration value="blue" setCurrentColor={setCurrentColor}/>
-          <Coloration value="black" setCurrentColor={setCurrentColor}/>
-          <Coloration value="red" setCurrentColor={setCurrentColor}/>
-        </div>
-      </div>
     </>
   );
 };

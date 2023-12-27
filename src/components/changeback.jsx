@@ -5,7 +5,7 @@ const Coloration = ({ value, setCurrentColor }) => {
   
     return (
       <button
-        style={{ backgroundColor: value }}
+        style={{ backgroundColor: value ,marginLeft:'10px'}}
         onClick={handleClick}
       >
         {value}
